@@ -1,1 +1,1 @@
-Week 1 [site](isabel-hague.github.io/week1/)
+Week 1 [site](https://isabel-hague.github.io/week1/index.html)
