@@ -1,0 +1,55 @@
+body {
+    background-color: #ECEBE4;
+ }
+h1 {
+    color: #e65917;
+    font-size: 60px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    border: solid 3px;
+    padding: 10px;
+    margin: 100px;
+}
+h2 {
+    color: #DDBCD6;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 2px;
+}
+.buttons{
+    text-align:center;
+    margin-top:0px;
+}
+button {
+    font-size: 20px;
+    border:2px solid #DDBCD6;
+    padding: 5px 100px;
+    transition:transform(2s);
+    border-style: dashed;
+    font-family:sans-serif
+}
+button:hover {
+        background-color: #e65917;
+    transform:scale(2);
+}
+/* Split screen*/
+/* Source: https://developer.mozilla.org/en-US/docs/Web/CSS/@container*/
+    .reflection-container {
+        display: flex;
+        height: 100vh;
+    }
+    .reflection {
+        flex: 1; /*Source:https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox*/
+        padding: 30px;
+        overflow: scroll; /* scroll if too long: source:https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Overflow */
+        border: 2px solid #ccc;
+        background: #fff;
+        font-size: 18px;
+        line-height: 1.5;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .reflection h3 {
+        text-align: center;
+        color: #e65917;
+        margin-bottom: 15px;
