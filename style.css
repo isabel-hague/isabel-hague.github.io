@@ -1,0 +1,41 @@
+h1 {
+font-family: "Abril Fatface", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  color: #e65917
+}
+h2 {
+    font-family: "Abril Fatface", serif;
+  font-weight: 200;
+  font-style: normal;
+  text-align: center;
+  color: #dea8c9
+}
+body {
+     background-color:#FAF8F3;
+}
+   .buttons {
+  text-align: center;
+  margin-top: 50px;
+}
+button {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#DDBCD6 ;
+    border:2px solid #DDBCD6;
+    border-radius:;
+    padding: 4px 100px;
+    transition:transform(2s);
+    font-family:sans-serif
+}
+button:hover {
+        background-color: #e65917;
+}   
+img.banner {
+  width: 100%;       
+  height: auto;   
+  display: block;
+  margin: 0;
+  border-radius: 0;
+}
