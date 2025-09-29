@@ -1,10 +1,9 @@
-<html>
-    <head>
-         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-Isabel's Website Development Site
-    </head>
-        <h1>Hi there👋</h1>
-    <body>
-        Week 1(<a href="https://isabel-hague.github.io/week1/index.html">Site</a>) </p>
-  <p> Week 2(<a href="https://isabel-hague.github.io/week2/index.html">Site</a>) </p>
-</html>
+# Isabel's Website Development Site
+
+Welcome to my site for **Fall 2025** 
+
+## Weeks
+- [Week 1](https://isabel-hague.github.io/week1/index.html)  
+- Week 2 (coming soon)
+
+![Banner](images/Tezza-3646.jpg)
