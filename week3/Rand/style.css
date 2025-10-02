@@ -1,0 +1,48 @@
+body {
+  background-color: #808DB5;
+  font-family: "Bebas Neue", sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* General letter style */
+.letter {
+  position: absolute;
+  font-size: 30vw;
+  font-weight: 900;
+  line-height: 0.8;
+}
+
+/* Black letters */
+.black {
+  color: black;
+  z-index: 2;
+}
+
+/* White letters */
+.white {
+  color: white;
+  z-index: 1;
+  transform: rotate(90deg);
+  opacity: 0.9;
+}
+/* Black letters */
+.black.letter1 { top: 15%; left: 30%; }
+.black.letter2 { top: 25%; left: 45%; }
+.black.letter3 { top: 10%; left: 55%; }
+.black.letter4 { top: 40%; left: 60%; }
+
+/* White letters */
+.white.letter1 { top: 5%; left: 55%; }
+.white.letter2 { top: 20%; left: 45%; }
+.white.letter3 { top: 30%; left: 55%; }
+.white.letter4 { top: 40%; left: 35%; }
