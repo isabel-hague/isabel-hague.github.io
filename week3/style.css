@@ -1,55 +1,110 @@
-body {
-    background-color: rgb(204, 221, 248);
-    font-family:"Bebas Neue", sans-serif;
-    margin: 0
-}
-main{
-    background-color: rgb(204, 221, 248);;
-    display: flex;
-    font-family:"Bebas Neue", sans-serif;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-}
-main > div:first-child {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 20vw; 
-  font-weight: 900;
-  line-height: 0.8;
-  color: black;
-  z-index: 2;
-}
-#theBackward {
-  position: absolute; 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 22vw;
-  font-weight: 900;
-  line-height: 0.8;
-  color: white;
-  z-index: 1; 
-  transform: rotate(-5deg); 
-  opacity: 0.9; 
-}
-.bebas-neue-regular {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
-  font-style: normal
-}
-div {
-    padding: 1vw;
-    margin: 1vw;
-    font-size: 20vw;
-    font-family: "Bebas Neue", sans-serif;
-}
-#theBackward{
-    transform: rotate(90deg);
-    color: rgb(255,255,255)
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-p {
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
 }
+
+main {
+  display: flex;
+  width: 100%;
+}
+
+/* LEFT SIDE */
+.left {
+  background-color: #566129;
+  color: #D1D0E3;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  padding: 80px 40px;
+  text-align: center;
+}
+.button {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+
+/* Button styling */
+.button button {
+    background: none;
+    border: none;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: #F5C6AA;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* Hover effect */
+.button button:hover {
+    opacity: 0.4;
+}
+
+.left h1 {
+  font-size: 5vw;
+  letter-spacing: 3px;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.left .subtext {
+  font-size: 1.1rem;
+  background-color: #F5C6AA;
+  color: #566129;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-top: 0;
+}
+
+/* RIGHT SIDE */
+.right {
+  background-color: #D1D0E3;
+  color: #566129;
+  flex: 1;
+  padding: 60px;
+  overflow-y: scroll;
+  font-family: 'Merriweather', serif;
+}
+.reflection-text {
+  max-width: 750px;
+  margin: 80px auto;
+  padding: 20px;
+  font-family: "Poppins", "Helvetica Neue", sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  letter-spacing: 0.8px;
+  text-align: justify;
+  color: #566129;
+}
+
+.reflection-text p {
+  margin-bottom: 22px;
+}
+
+/* Source: https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar */
+.right::-webkit-scrollbar {
+  width: 8px;
+}
+.right::-webkit-scrollbar-thumb {
+  background-color: #566129;
+  border-radius: 10px;
+}
+
