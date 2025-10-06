@@ -1,0 +1,96 @@
+*{
+    background-color: rgb(255, 255, 255);
+}
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 2rem;
+}
+.left {
+  flex: 1;
+}
+.right {
+  flex: 1;
+  padding-left: 2rem;
+}
+.button {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+/* Button styling */
+.button button {
+    background: none;
+    border: none;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+/* Hover effect */
+.button button:hover {
+    opacity: 15%;
+}
+.crossout {
+         text-decoration: line-through;
+         font-family: "Bebas Neue", sans-serif;
+        font-weight: 2; 
+        color: blue;
+        display: inline-block;
+}
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight:600;
+  font-style: normal;
+}
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+h1 {
+    font-family: "Anton", sans-serif;
+    color: #ff0000;
+    font-size: 10vw;
+    line-height: 0.9;
+    color: red;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+    padding-left: 0;
+}
+.right p {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  color:black;
+  position: relative;
+  font-style: italic;
+  text-align: end;
+  
+}
+/* Hide the hover text initially */
+/*https://developer.mozilla.org/en-US/docs/Web/CSS/content AND */
+.right p::after {
+  content: attr(data-hover);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Hide original text on hover, show hover text */
+.right p:hover {
+  color: transparent;
+}
+.right p:hover::after {
+  opacity: 1;
+  color: red;
+}
