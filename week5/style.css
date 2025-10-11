@@ -4,7 +4,7 @@
     left: 20px;
 }
 .button button {
-    background;
+    background: none;
     border: none;
     font-family: "Bebas Neue", sans-serif;
     font-size: 20px;
@@ -30,7 +30,7 @@ html, body {
   margin: 0;
   background-color: #dfc4c4;
   font-family: 'Times New Roman', Times, serif;
-  color:#rgb(41, 29, 29);
+  color: rgb(41, 29, 29);
 }
 
 main {
@@ -78,9 +78,7 @@ main {
 h1{
   color:rgb(41, 29, 29);  
     font-family: "Monsieur La Doulaise", cursive;
-    font-size: 50px;
-
-}
+    font-size: 50px;}
 h2{
     font-family: "Monsieur La Doulaise", cursive;
     }
