@@ -28,18 +28,25 @@ body {
   margin-top: 50px;
 }
 button {
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    color:#DDBCD6 ;
-    border:2px solid #DDBCD6;
-    border-radius:;
-    padding: 4px 100px;
-    transition:transform(2s);
-    font-family:sans-serif
+  background: none;
+  border: 1px solid #DDBCD6;   /* subtle border */
+  color: #DDBCD6;
+  padding: 8px 16px;
+  border-radius: 6px;          /* soft rounding */
+  cursor: pointer;
+
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+
+  transition: all 0.25s ease;
 }
+
 button:hover {
-        background-color: #e65917;
-}   
+  background-color: rgba(221, 188, 214, 0.15); /* soft fade fill */
+  border-color: #e65917;                       /* slight color pop */
+  color: #e65917;                              
+}
+
 img.banner {
   width: 100%;       
   height: auto;   
