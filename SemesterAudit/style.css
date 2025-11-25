@@ -20,11 +20,13 @@ body {
 
 h1, h2 {
       font-family: "Boldonse", system-ui;
+      color: rgb(19, 69, 75);
 }
 
 h3 {
   font-family: sans-serif;
   margin-bottom: 20px;
+  color: #737dc5;
 }
 
 p, ul {
@@ -50,7 +52,7 @@ p, ul {
 .arrow {
   font-size: 2rem;
   text-decoration: none;
-  color: #edffed;
+  color: #22444A;
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
@@ -123,7 +125,7 @@ p, ul {
 }
 
 .panel-scroll::-webkit-scrollbar-thumb {
-  background: #aaa;
+  background: #737dc5;
   border-radius: 4px;
 }
 
@@ -180,8 +182,8 @@ p, ul {
 .button {
   display: inline-block;
   padding: 10px 20px;
-  background: #000;
-  color: #fff;
+  background:rgb(19, 69, 75);
+  color: #edffed;
   border-radius: 6px;
   text-decoration: none;
   font-size: 1rem;
