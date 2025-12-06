@@ -1,0 +1,918 @@
+:root {
+  /* Color palette */
+  --bg: #FEF0EC;
+  --surface: #FFB8A3;
+  --text: #E73D06;
+  --text-dim: #E73D06;
+  --primary: #9F940A;
+  --primary-ink: #020202;
+  --accent: #FFB8A3;
+  --accent-ink: #9C9431;
+  --line: #E73D06;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 10px rgba(16, 16, 16, 0.06);
+  --shadow-md: 0 6px 18px rgba(16, 16, 16, 0.08);
+  --shadow-lg: 0 12px 30px rgba(16, 16, 16, 0.12);
+
+  /* Radii */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 56px;
+  --space-9: 80px;
+
+  /* Typography sizes */
+  --size-xs: clamp(0.8rem, 0.78rem + 0.2vw, 0.9rem);
+  --size-sm: clamp(0.95rem, 0.9rem + 0.3vw, 1.05rem);
+  --size-md: clamp(1.05rem, 1rem + 0.4vw, 1.15rem);
+  --size-lg: clamp(1.5rem, 1.45rem + 0.6vw, 1.8rem);
+  --size-xl: clamp(2rem, 1.9rem + 1vw, 2.6rem);
+  --size-xxl: clamp(2.8rem, 2.6rem + 1.4vw, 3.6rem);
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --speed-fast: 180ms;
+  --speed-med: 280ms;
+  --speed-slow: 420ms;
+
+  /* Container widths */
+  --container: 1100px;
+  --container-wide: 1280px;
+}
+
+/* ---------------------------- */
+/* Typography classes           */
+/* ---------------------------- */
+
+/* Boldonse for headings */
+.boldonse-regular {
+  font-family: "Boldonse", system-ui, sans-serif;
+  font-weight: 400; /* change to 700 for bold headings */
+  font-style: normal;
+}
+
+/* Afacad Flux for body text (primary) */
+.afacad-flux-body {
+  font-family: "Afacad Flux", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* adjust between 100–1000 depending on weight you want */
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+/* Apply accent font to all grey/dim copy */
+.section-text,
+.hero-lede,
+.card-meta,
+.vibe-sub,
+.fine-print,
+.link-back {
+  font-family: "Afacad Flux", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* adjust if you want lighter or bolder */
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  /* keep their existing grey color */
+}
+  .accent-copy {
+  font-family: "Afacad Flux", sans-serif;
+}
+/* Global default: Afacad Flux everywhere */
+body {
+  font-family: "Afacad Flux", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Headings use Boldonse */
+h1, h2, h3, h4, h5, h6,
+.landing-title,
+.section-title {
+  font-family: "Boldonse", system-ui, sans-serif;
+  font-weight: 700;
+}
+
+.vibe-desc,
+.preview-desc,
+.nav-link,
+.section-text {
+  font-family: "Afacad Flux", sans-serif;
+  font-weight: 400;
+}
+.hero-title {
+    color: #9F940A;
+}
+
+.preview-title {
+  font-weight: 500;
+  color: #FEF0EC;
+  margin: 0;    
+}
+
+.preview-meta {
+font-family: "Afacad Flux", sans-serif; /* enforce your global font */
+  font-weight: 400;
+  font-size: small;
+  color: #656565; 
+  margin-top: .25px;   /* tiny gap under the title */
+  margin-bottom: 4px; /* bigger gap before the description */
+}
+
+.accent {
+  font-family: "Afacad Flux", sans-serif;
+  color: var(--accent);
+  font-weight: 500;
+  --size-xs: clamp(0.8rem, 0.78rem + 0.2vw, 0.9rem);
+  --size-sm: clamp(0.95rem, 0.9rem + 0.3vw, 1.05rem);
+  --size-md: clamp(1.05rem, 1rem + 0.4vw, 1.15rem);
+  --size-lg: clamp(1.5rem, 1.45rem + 0.6vw, 1.8rem);
+  --size-xl: clamp(2rem, 1.9rem + 1vw, 2.6rem);
+  --size-xxl: clamp(2.8rem, 2.6rem + 1.4vw, 3.6rem);
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --speed-fast: 180ms;
+  --speed-med: 280ms;
+  --speed-slow: 420ms;
+  /* Container widths */
+  --container: 1100px;
+  --container-wide: 1280px;
+}
+
+/* ---------------------------- */
+/* Global reset & base          */
+/* ---------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* fallback smooth scroll (GSAP will enhance) */
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--bg);
+  font-family: "Afacad Flux", sans-serif; /* enforce global font */
+  line-height: 1.5;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(100% - 40px, var(--container));
+  margin-inline: auto;
+}
+
+.container-wide {
+  width: min(100% - 40px, var(--container-wide));
+  margin-inline: auto;
+}
+
+/* Utility classes */
+.link {
+  color: var(--primary-ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.link-back {
+  text-decoration: none;
+  color: var(--text-dim);
+}
+.fine-print {
+  color: var(--text-dim);
+  font-size: var(--size-xs);
+}
+
+/* Buttons */
+.enter-btn {
+  font-family: "Afacad Flux", sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  background-color: #9F940A; /* default green */  color: #fff;              /* text color */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover state */
+.enter-btn:hover {
+  background-color: #e85c50; /* darker or alternate color */
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--speed-med) var(--ease), box-shadow var(--speed-med) var(--ease), background var(--speed-med) var(--ease);
+  cursor: pointer;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary {
+  background:#E73D06;
+  color: #fff;
+}
+.btn-primary:hover {
+  background: color-mix(in oklab, var(--primary), #000 12%);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--line);
+}
+/* Back to Home / Choose another vibe buttons */
+.vibe-footer-actions {
+  display: flex;
+  justify-content: flex-end;   /* align buttons to the right */
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.btn-subtle {
+  font-family: "Afacad Flux", sans-serif;
+  font-weight: 500;
+  background: rgba(254, 240, 236, 0.7); /* FEF0EC with transparency */
+  color: var(--text-dim);
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover: fade a bit darker */
+.btn-subtle:hover {
+  background: rgba(254, 240, 236, 0.9); /* slightly less transparent */
+  color: var(--text);                   /* stronger text color */
+}
+
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: -999px;
+}
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+  z-index: 9999;
+  background: #000;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+/* Style only the preview link button */
+#preview-link {
+  background-color: #E73D06;   /* example: bright orange background */
+  color: #fff;                 /* white text */
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#preview-link:hover {
+  background-color: #9F940A;   /* example: green on hover */
+  color: #fff;
+}
+
+
+/* ---------------------------- */
+/* Header & navigation          */
+/* ---------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid var(--line);
+  z-index: 1000;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between; /* brand left, nav right */
+  align-items: center;
+  padding: var(--space-4) 0;
+}
+
+
+.brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: var(--size-lg);
+}
+/* Brand uses Boldonse */
+.brand,
+.brand-mark {
+  font-family: "Boldonse", system-ui, sans-serif;
+  font-weight: 700; /* ensures bold weight */
+  font-style: normal;
+}
+
+/* Trademark stays lighter if you want contrast */
+.brand-tm {
+  font-family: "Afacad Flux", sans-serif; /* keep TM in body font */
+  font-weight: 400;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+
+.primary-nav .nav-list,
+.auth-nav .nav-list,
+.footer-inner .footer-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-link {
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+.nav-link:hover {
+  background: #FFB8A3;
+}
+
+.menu-toggle {
+  display: none; /* visible on small screens via media query */
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 12px;
+  background: var(--surface);
+}
+
+/* ---------------------------- */
+/* Landing section              */
+/* ---------------------------- */
+
+.landing {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(1200px 800px at 80% 20%, FFB8A3(107, 124, 255, 0.15), transparent 70%),
+    radial-gradient(1000px 600px at 20% 80%, FFB8A3(255, 123, 123, 0.12), transparent 72%),
+    #ffffff;
+}
+
+.landing-layer {
+  position: relative;
+  width: 100%;
+}
+
+.landing-content {
+  text-align: center;
+  padding-block: var(--space-8);
+}
+
+.landing-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.2;
+  font-family: "Boldonse", system-ui, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.2px;
+  margin: 0 0 var(--space-3) 0;
+}
+
+.landing-title .accent {
+  color: var(--accent); /* green accent */
+  font-family: "Afacad Flux", sans-serif; /* switch to body font */
+  font-weight: 500; /* optional */
+}
+
+.landing-sub {
+  color: var(--text-dim);
+  margin-bottom: var(--space-6);
+}
+
+.enter-actions {
+  display: flex;
+  justify-content: center;
+}
+.enter-btn:hover {
+  box-shadow: var(--shadow-md);
+}
+.enter-arrow {
+  transform: translateX(0);
+  transition: transform var(--speed-med) var(--ease);
+}
+.enter-btn:hover .enter-arrow {
+  transform: translateX(4px);
+}
+
+/* ---------------------------- */
+/* Home hero + vibe carousel    */
+/* ---------------------------- */
+
+.hero {
+  padding-block: var(--space-8);
+}
+
+.hero-text {
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+.hero-title {
+  font-size: var(--size-xl);
+  margin: 0 0 var(--space-2) 0;
+}
+.hero-lede {
+  color: var(--text-dim);
+  max-width: 58ch;
+  margin: 0 auto;
+}
+
+.vibe-carousel {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-4);
+  margin-block: var(--space-6);
+  position: relative; z-index: 2;
+}
+.vibe-enter {
+  margin-top: auto; /* pushes button to bottom */
+  align-self: stretch; /* makes button full width */
+}
+
+.carousel-arrow {
+  border: 1px solid var(--line);
+  color: #FEF0EC;
+  border-radius: 999px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: #9F940A;
+  box-shadow: var(--shadow-sm);
+}
+.carousel-arrow:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.vibe-track {
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 320px; /* fixed width for all cards */
+  gap: var(--space-4);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 8px;
+  
+}
+
+.vibe-card {
+  position: relative;
+  z-index: 1;
+}
+.vibe-card-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: var(--space-5);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  gap: var(--space-3);
+}
+
+.vibe-card-inner:hover {
+  transform: translateY(-6px); /* Slight lift */
+  box-shadow: var(--shadow-md);
+}
+.vibe-name {
+  margin: 0;
+  font-size: var(--size-lg);
+  color:#FEF0EC;
+}
+.vibe-desc {
+  margin: 0;
+  color: var(--text-dim);
+}
+
+/* Hero quick links */
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+/* ---------------------------- */
+/* Vibe page (cards + preview)  */
+/* ---------------------------- */
+
+.vibe-page {
+  padding-block: var(--space-7);
+  background: #9F940A;
+  border-top: 1px solid var(--line);
+}
+
+.vibe-header {
+  display: grid;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+.vibe-title {
+  font-size: var(--size-lg);
+  margin: 0;
+  color: #FFB8A3
+}
+.vibe-sub {
+  color: var(--text-dim);
+  margin: 0;
+  color: #FEF0EC
+}
+
+.vibe-grid-wrap {
+  display: grid;
+  grid-template-columns: 1fr 360px; /* right side preview panel width */
+  gap: var(--space-5);
+}
+.preview-panel[hidden] + * {
+  /* when preview is hidden, grid still flows nicely */
+}
+
+.vibe-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: var(--space-5);
+  grid-auto-rows: 360px; /* every card row is 360px tall */}
+
+/* Restaurant card styling */
+.vibe-grid li,
+.card {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent; /* remove white background */
+}
+
+.vibe-grid li:hover {
+  transform: scale(1.08) translateY(-6px); /* stronger enlargement + lift */
+  box-shadow: 0 12px 24px rgba(0,0,0,0.25); /* deeper shadow */
+  z-index: 2; /* ensures hovered card sits above neighbors */
+}
+
+/* Optional: image zoom inside card */
+.vibe-grid li img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.vibe-grid li:hover img {
+  transform: scale(1.12);
+  filter: brightness(1.1);
+}
+
+/* Card styling per provided hover spec (with slightly elevated shadow) */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(16, 16, 16, 0.03);
+  transition: transform .22s ease, box-shadow .22s ease;
+  cursor: pointer;
+  height: 100%; /* fill the grid row */
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(16, 16, 16, 0.08);
+}
+.card-media {
+  height: 180px;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  padding: 0;
+  margin: 0;
+  background: transparent; /* no white fill */
+}
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  flex: 1;
+  padding: 12px 14px;
+  overflow: auto; /* let content expand naturally */
+}
+.card-title {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.card-meta {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Preview side panel */
+.preview-panel {
+  position: sticky;
+  top: calc(64px + var(--space-5)); /* below header + spacing */
+  align-self: start;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  height: max-content;
+}
+
+.preview-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  border: none;
+  font-size: 22px;
+  color: var(--text-dim);
+  cursor: pointer;
+}
+
+.preview-media {
+  height: 180px;
+  background: #f2f3f7;
+  background-size: cover;
+  background-position: center;
+}
+
+.preview-content {
+  padding: var(--space-5);
+  display: grid;
+  gap: var(--space-3);
+}
+.preview-title {
+  margin: 0;
+  font-size: var(--size-md);
+}
+.preview-desc {
+  margin: 0;
+  color: var(--text);
+}
+
+.preview-actions {
+  margin-top: var(--space-2);
+}
+
+.preview-map iframe {
+  width: 100%;
+  height: 200px;
+  border: 0;
+}
+
+/* Vibe footer actions */
+.vibe-footer-actions {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+/* ---------------------------- */
+/* Project sections             */
+/* ---------------------------- */
+
+.section {
+  padding-block: var(--space-7);
+  border-top: 1px solid var(--line);
+}
+.section-title {
+  font-size: var(--size-lg);
+  font-family: var(--font-serif);
+  margin: 0 0 var(--space-3) 0;
+}
+.section-text {
+  max-width: 65ch;
+  color: var(--text-dim);
+}
+
+/* Mood board grid */
+.mood-board {
+  margin-top: var(--space-4);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(160px, 1fr));
+  gap: var(--space-4);
+}
+.mood-item {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Flow steps */
+.flow-steps {
+  display: grid;
+  gap: var(--space-3);
+  padding-left: 1.2rem;
+}
+
+/* Examples grid */
+.example-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: var(--space-5);
+}
+
+/* Deck */
+.deck {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: var(--space-4);
+}
+.slide {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+}
+.slide-title {
+  margin: 0 0 var(--space-2) 0;
+}
+.slide-text {
+  color: var(--text-dim);
+}
+
+/* Map embed */
+.map-embed iframe {
+  width: 100%;
+  min-height: 380px;
+  border: 0;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---------------------------- */
+/* Footer                       */
+/* ---------------------------- */
+
+.site-footer {
+  padding-block: var(--space-6);
+  border-top: 1px solid var(--line);
+  background: #fff;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ---------------------------- */
+/* Reveal animations (hooks)    */
+/* ---------------------------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  will-change: transform, opacity;
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity var(--speed-slow) var(--ease), transform var(--speed-slow) var(--ease);
+}
+
+/* ---------------------------- */
+/* Responsive design            */
+/* ---------------------------- */
+
+@media (max-width: 1024px) {
+  .vibe-grid-wrap {
+    grid-template-columns: 1fr;
+  }
+  .preview-panel {
+    position: relative;
+    top: auto;
+    order: -1; /* place above grid on tablet */
+  }
+  .vibe-grid {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+  .deck {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+  .example-grid {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .header-inner {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "brand auth"
+      "nav nav";
+    gap: var(--space-3);
+  }
+  .brand { grid-area: brand; }
+  .auth-nav { grid-area: auth; }
+  .primary-nav { grid-area: nav; }
+
+  .menu-toggle { display: inline-block; }
+
+  .vibe-track {
+    grid-auto-columns: 86%;
+  }
+  .vibe-grid {
+    grid-template-columns: 1fr;
+  }
+  .mood-board {
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+  }
+}
+/* Hide home and map until Enter is pressed */
+#home,
+#map {
+  display: none;
+}
+/* Force Sushi cursor everywhere, always */
+body, body * {
+  cursor: url("Sushi.png") 0 0, auto !important;
+}
+
+.floating-emoji {
+  position: fixed;
+  font-size: 1.5rem;
+  pointer-events: none;
+  animation: drift 10s infinite ease-in-out;
+  z-index: 0; 
+}
+
+@keyframes drift {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  25%  { transform: translate(40px, -60px) rotate(15deg); }
+  50%  { transform: translate(-30px, -120px) rotate(-10deg); }
+  75%  { transform: translate(60px, -180px) rotate(20deg); }
+  100% { transform: translate(-20px, -240px) rotate(-5deg); }
+}#about {
+  text-align: center;
+}
+#about .section-text {
+  margin: 0 auto;
+  max-width: 65ch; /* keeps line length readable */
+}
