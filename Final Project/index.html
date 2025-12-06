@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Plately — Choose Your Vibe and get curated restaurant recommendations by mood." />
+  <title>MoodMeal · Choose Your Vibe</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js" defer></script>
+
+  <script src="script.js" defer></script>
+</head>
+<body data-vibe="default">
+  <div id="emoji-layer"></div>
+  <a class="skip-link" href="#home">Skip to content</a>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="MoodMeal home">
+        <span class="brand-mark">MoodMeal.</span><span class="brand-tm">TM</span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="about.html#about" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Landing -->
+  <section id="landing" class="landing" aria-label="Landing">
+    <div class="landing-layer">
+      <div class="landing-content container">
+        <h1 class="landing-title boldonse-regular">
+          A lot on your plate? <br>
+          <span class="accent">Let us handle dinner.</span>
+        </h1>
+        <div class="enter-actions">
+          <button class="enter-btn" aria-label="Enter site">
+            <span class="enter-label">Enter</span>
+            <span class="enter-arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <main id="home" class="home" role="main">
+    <!-- Hero -->
+    <section class="hero container" aria-label="Choose your vibe">
+      <div class="hero-text">
+        <h2 class="hero-title">Choose your vibe</h2>
+        <p class="hero-lede">Pick a mood to get curated, local restaurant recommendations.</p>
+      </div>
+
+      <!-- Carousel -->
+      <div class="vibe-carousel" aria-label="Vibe selector">
+        <button class="carousel-arrow left" aria-label="Scroll left" data-dir="left">←</button>
+        <ul class="vibe-track" role="list">
+          <li class="vibe-card" data-vibe="cozy">
+            <div class="vibe-card-inner">
+              <h3 class="vibe-name">Cozy & Romantic<br>🍷🥰</h3>
+              <p class="vibe-desc">Soft lighting, intimate tables, and warm vibes. Perfect for dates or slow, cozy nights.</p>
+              <button class="vibe-enter btn btn-primary" aria-label="Enter Cozy & Romantic">Explore this vibe</button>
+            </div>
+          </li>
+          <li class="vibe-card" data-vibe="trendy">
+            <div class="vibe-card-inner">
+              <h3 class="vibe-name">Trendy & Aesthetic<br>🤳✨</h3>
+              <p class="vibe-desc">Cute interiors, brunch vibes, photo-worthy spots.</p>
+              <button class="vibe-enter btn btn-primary" aria-label="Enter Trendy & Aesthetic">Explore this vibe</button>
+            </div>
+          </li>
+          <li class="vibe-card" data-vibe="casual">
+            <div class="vibe-card-inner">
+              <h3 class="vibe-name">Casual & Reliable<br>😎🥗</h3>
+              <p class="vibe-desc">Low-key, comfort food, relaxed atmosphere.</p>
+              <button class="vibe-enter btn btn-primary" aria-label="Enter Casual & Reliable">Explore this vibe</button>
+            </div>
+          </li>
+          <li class="vibe-card" data-vibe="drinks">
+            <div class="vibe-card-inner">
+              <h3 class="vibe-name">Drinks & Social<br>🍸🕺🏻</h3>
+              <p class="vibe-desc">Cocktail bars, wine spots, speakeasies, happy-hour energy.</p>
+              <button class="vibe-enter btn btn-primary" aria-label="Enter Drinks & Social">Explore this vibe</button>
+            </div>
+          </li>
+          <li class="vibe-card" data-vibe="cafe">
+            <div class="vibe-card-inner">
+              <h3 class="vibe-name">Café & Chill<br>☕️🥐</h3>
+              <p class="vibe-desc">Coffee shops, bakeries, matcha spots, cozy study-and-chat energy.</p>
+              <button class="vibe-enter btn btn-primary" aria-label="Enter Café & Chill">Explore this vibe</button>
+            </div>
+          </li>
+        </ul>
+        <button class="carousel-arrow right" aria-label="Scroll right" data-dir="right">→</button>
+      </div>
+    </section>
+
+    <!-- Vibe page -->
+    <section id="vibe-page" class="vibe-page" aria-label="Vibe recommendations" hidden>
+      <div class="container vibe-header">
+        <h2 class="vibe-title">City Taste Map</h2>
+        <p class="vibe-sub">Explore curated spots by neighborhood and mood.</p>
+      </div>
+
+      <div class="container vibe-grid-wrap">
+        <ul class="vibe-grid" role="list" id="vibe-grid"></ul>
+        <aside class="preview-panel" aria-live="polite" aria-label="Restaurant details" hidden>
+          <button class="preview-close" aria-label="Close details">×</button>
+          <div class="preview-media" id="preview-media"></div>
+          <div class="preview-content">
+            <h4 class="preview-title" id="preview-title">La Petite Lumière</h4>
+            <p class="preview-meta" id="preview-meta">West Village · romantic, cozy</p>
+            <p class="preview-desc" id="preview-desc">
+              Low-lit bistro with velvet chairs and an intimate menu of seasonal fish.
+            </p>
+            <div class="preview-actions">
+              <a class="btn btn-subtle" id="preview-link" href="#" target="_blank" rel="noopener noreferrer">
+                View menu / website
+              </a>
+            </div>
+          </div>
+          <div class="preview-map">
+            <iframe id="preview-map" title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </aside>
+      </div>
+
+      <div class="container vibe-footer-actions">
+        <a href="#home" class="btn btn-subtle">Back to Home</a>
+        <button class="btn btn-subtle choose-another">Choose another vibe</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
