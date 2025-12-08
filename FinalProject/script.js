@@ -360,14 +360,36 @@ const DATA = {
       image:"https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwCm3pBb6MHYIe5Uw2vkkETB9bZPEaYu9JiHCeIKtXMEk044njCg4be-2V6VXgPd8IKtXnOM2YLLw-ISlctym5znCzwBLTNlB2_0xHE60QgcSdWjpT9yZRl4tVhaeezXsjyOZ5lR-VQQ3E=s1360-w1360-h1020-rw",
       url:"https://www.dialogue.nyc/"
     }
-  ]
+  ],
+  hungover: [
+    {
+      name:"Son Del North",
+      slug:"Son Del North",
+      location:"Lower East Side",
+      tags:["hearty", "comforting"],
+      description:"Mexican-American comfort spot with big burritos quintessential for recovery energy",
+      image:"https://res.cloudinary.com/the-infatuation/image/upload/v1751046732/images/NYC_SonDelNorthWV_BreakfastBurrito_KatePrevite_00003_iproha.jpg",
+      url:"https://sondelnorth.com/menu",
+    }
+  ],
+  quick: [
+    {
+    }
+  ],
+  sweet: [
+    {
+    }
+  ],
 };
 const VIBE_EMOJIS = {
   cozy: ["🍷", "🕯️", "🥰"],
   trendy: ["📱", "🔥", "✨"],
   casual: ["😎", "🍔", "🥗"],
   drinks: ["🍸", "🪩", "🕺🏻"],
-  cafe: ["☕️", "💻", "🥐"]
+  cafe: ["☕️", "💻", "🥐"],
+  hungover: ["🫩", "💤", "🤰"],
+  quick: ["⚡️", "🥡", "👌"],
+  sweet: ["🍰 ","🍦", "🍫"],
 };
 function spawnFloatingEmojis(vibeKey) {
   const emojis = VIBE_EMOJIS[vibeKey] || [];
