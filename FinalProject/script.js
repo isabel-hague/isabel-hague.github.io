@@ -241,7 +241,7 @@ const DATA = {
       location:"West Village",
       tags:["elegant", "refined-bar"],
       description:"Modern Italian favorite known for sleek interiors, perfect pastas, and romantic, low-lit energy",
-      image:"https://s3-media0.fl.yelpcdn.com/bphoto/l0sySmX6dCXSXCnBV7NRrQ/348s.jpg",
+      image:"https://s3-media0.fl.yelpcdn.com/bphoto/aLyMhKrE5a-ch69vT5DJfQ/o.jpg",
       url:"https://www.lartusi.com/menu/"
     },
    {
