@@ -511,6 +511,13 @@ a {
   scroll-padding-inline: 8px;
   
 }
+.vibe-heading {
+  font-family: "Abril Fatface", serif;
+  font-size: 1.8rem;
+  color: #e65917;
+  text-align: center;
+  margin-bottom: 1rem;
+}
 
 .vibe-card {
   position: relative;
@@ -530,7 +537,7 @@ a {
 }
 
 .vibe-card-inner:hover {
-  transform: translateY(-6px); /* Slight lift */
+  transform: translateY(-6px); 
   box-shadow: var(--shadow-md);
 }
 .vibe-name {
@@ -623,7 +630,7 @@ a {
   filter: brightness(1.1);
 }
 
-/* Card styling per provided hover spec (with slightly elevated shadow) */
+/* Card styling per provided hover spec */
 .card {
   display: flex;
   flex-direction: column;
