@@ -70,8 +70,42 @@ function scrollTrack(direction = "right") {
     : vibeTrack.scrollLeft + scrollBy;
   vibeTrack.scrollTo({ left: target, behavior: "smooth" });
 }
-arrowLeft?.addEventListener("click", () => scrollTrack("left"));
-arrowRight?.addEventListener("click", () => scrollTrack("right"));
+arrowLeft?.addEventListener("click", () => {
+  scrollTrack("left");
+  setTimeout(updateArrows, 300); // update after scroll animation
+});
+
+arrowRight?.addEventListener("click", () => {
+  scrollTrack("right");
+  setTimeout(updateArrows, 300);
+});
+
+// Also update when user scrolls manually
+vibeTrack?.addEventListener("scroll", updateArrows);
+
+// Run once on page load
+updateArrows();
+
+
+function updateArrows() {
+  if (!vibeTrack) return;
+
+  // Hide left arrow if at start
+  if (vibeTrack.scrollLeft <= 0) {
+    arrowLeft.style.visibility = "hidden";
+  } else {
+    arrowLeft.style.visibility = "visible";
+  }
+
+  // Only hide right arrow if content overflows
+  if (vibeTrack.scrollWidth > vibeTrack.clientWidth &&
+      vibeTrack.scrollLeft + vibeTrack.clientWidth >= vibeTrack.scrollWidth) {
+    arrowRight.style.visibility = "hidden";
+  } else {
+    arrowRight.style.visibility = "visible";
+  }
+}
+
 
 /* Vibe selection + Grid */
 function loadVibe(vibeKey) {
