@@ -490,7 +490,7 @@ const DATA = {
       location:"Lower East Side",
       tags:["floral", "aesthetic"],
       description:"Whimsical café-meets-flower-shop offering pretty lattes, fresh blooms, and a soft, romantic vibe",
-      image:"https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwCm3pBb6MHYIe5Uw2vkkETB9bZPEaYu9JiHCeIKtXMEk044njCg4be-2V6VXgPd8IKtXnOM2YLLw-ISlctym5znCzwBLTNlB2_0xHE60QgcSdWjpT9yZRl4tVhaeezXsjyOZ5lR-VQQ3E=s1360-w1360-h1020-rw",
+      image:"https://cdn.corner.inc/place-photo/AelY_CshOpB4WiQuO0E85J_LaFTyyh9pHab7uvw3xFT8oWPRGic_VL4rN5rJOc203TXoHuMj5WslffUPO-u9cvkxJGHURYCYMKtc4Lw_M2d_rrQO28T1CYzT24qoTzGxAEM8FNA4wnOm5r8VzO0JH0QJXcDSR-O9kldntoeGzf9d6jQ5q8Hd.jpeg",
       url:"https://www.dialogue.nyc/"
     },
     {
