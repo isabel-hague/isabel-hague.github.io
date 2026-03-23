@@ -898,8 +898,8 @@ a {
   display: none;
 }
 /* Force Sushi cursor everywhere, always */
-body, body * {
-  cursor: url("Sushi.png") 0 0, auto !important;
+body {
+  cursor: url("Cursor.png"), auto !important;
 }
 
 .floating-emoji {
