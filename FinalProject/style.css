@@ -922,3 +922,16 @@ body {
 #about .section-text {
   margin: 0 auto;
   max-width: 65ch;} /* keeps line length readable */
+  
+/* Force sushi cursor everywhere */
+*,
+*::before,
+*::after {
+  cursor: url("Cursor.png") 0 0, auto !important;
+}
+
+/* Allow default cursor on iframes (Google Maps) */
+iframe,
+.preview-map iframe {
+  cursor: auto !important;
+}
